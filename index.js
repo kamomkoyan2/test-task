@@ -8,6 +8,7 @@ require('./src/db/mongoose');
 const users = require('./src/routes/auth');
 const posts = require('./src/routes/post');
 const comments = require('./src/routes/comment');
+const likes = require('./src/routes/likes');
 
 const app = express()
 
@@ -25,6 +26,7 @@ app.use(logger("dev"));
 app.use('/api/users', users);
 app.use('/api/posts', posts)
 app.use('/api/post', comments)
+app.use('/api/post', likes)
 
 app.get("/", function (req, res) {
     res.send("hello");
